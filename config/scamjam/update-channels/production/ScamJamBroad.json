@@ -1,0 +1,22 @@
+[
+  {
+    "componentName": "ScamJam",
+    "targetRelease": "v1.00"
+  },
+  {
+    "componentName": "PowerShell",
+    "targetRelease": "v7.5.1"
+  },
+  {
+    "componentName": "PowerShellAux",
+    "targetRelease": "v7.5.1"
+  },
+  {
+    "componentName": "Blocky",
+    "targetRelease": "v0.25"
+  },
+  {
+    "componentName": "Shawl",
+    "targetRelease": "v1.7.0"
+  }
+]

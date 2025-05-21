@@ -1,0 +1,315 @@
+[
+  {
+    "displayName": "Quick Assist",
+    "productName": "Quick Assist",
+    "authenticodeCommonName": ["CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "QuickAssist.exe"
+      ],
+      "secondaryCommandLineSearchStrings": []
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": [],
+      "tcpRemote": [],
+      "udpRemote": []
+    },
+    "appx": {
+      "available": true,
+      "packageName": [
+        "MicrosoftCorporationII.QuickAssist"
+      ]
+    },
+    "uninstall": {
+      "uninstallKeyDisplayNameSubtrings": [],
+      "remediationScripts": []
+    }
+  },
+  {
+    "displayName":"Parsec",
+    "productName": "Parsec",
+    "authenticodeCommonName": ["CN=Unity Technologies SF, O=Unity Technologies SF, STREET=30 3rd Street, PostalCode=94103, L=San Francisco, S=California, C=US"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "parsecd.exe"
+      ],
+      "secondaryCommandLineSearchStrings": [
+        "pservice.exe"
+      ]
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": ["3478"],
+      "tcpRemote": [],
+      "udpRemote": ["3478"]
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": false,
+      "remediationScripts": [],
+      "arp": {
+        "uninstallKeyNames": ["Parsec"],
+        "uninstallKeyDisplayNamePropertySubtrings": []
+      }
+      
+    }
+  },
+  {
+    "displayName": "Zoho Assist",
+    "productName": "Zoho Assist",
+    "authenticodeCommonName":[],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "Zoho Assist.exe"
+      ],
+      "secondaryCommandLineSearchStrings": []
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": [],
+      "tcpRemote": [],
+      "udpRemote": []
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": false,
+      "remediationScripts": [],
+      "arp": {
+        "uninstallKeyNames": [],
+        "uninstallKeyDisplayNamePropertySubtrings": ["Zoho Assist"]
+      }
+    }
+  },
+  {
+    "displayName": "RemotePC",
+    "productName": "RemotePCUI",
+    "authenticodeCommonName":["CN=\"IDrive, Inc.\", O=\"IDrive, Inc.\", L=Calabasas, S=California, C=US"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "RemotePCUI.exe",
+        "RemotePCHostUI.exe"
+
+      ],
+      "secondaryCommandLineSearchStrings": [
+        "RemotePCService.exe",
+        "HostService.exe",
+        "RemotePCDesktop.exe",
+        "ViewerService.exe",
+        "RPCPerformanceService.exe",
+        "RPCDownloader.exe"
+      ]
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": [],
+      "tcpRemote": [],
+      "udpRemote": []
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": false,
+      "remediationScripts": [],
+      "arp": {
+        "uninstallKeyNames": [],
+        "uninstallKeyDisplayNamePropertySubtrings": ["RemotePC", "RemotePC Printer"]
+      }
+    }
+  },
+  {
+    "displayName": "TeamViewer",
+    "productName": "TeamViewer",
+    "authenticodeCommonName":["CN=TeamViewer Germany GmbH, O=TeamViewer Germany GmbH, L=Göppingen, S=Baden-Württemberg, C=DE"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "TeamViewer.exe"
+      ],
+      "secondaryCommandLineSearchStrings": [
+        "TeamViewer_Service.exe",
+        "tv_w32.exe",
+        "tv_x64.exe"
+      ]
+    },
+    "networkPorts": {
+      "tcpLocal": [5939],
+      "udpLocal": [5939],
+      "tcpRemote": [5938],
+      "udpRemote": [5938]
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": true,
+      "remediationScripts": [],
+      "arp": {
+        "uninstallKeyNames": ["TeamViewer"],
+        "uninstallKeyDisplayNamePropertySubtrings": ["TeamViewer"]
+      }
+    }
+  },
+  {
+    "displayName": "Supremo",
+    "productName": "Supremo Remote Control",
+    "authenticodeCommonName":["CN=Nanosystems S.r.l., O=Nanosystems S.r.l., L=Ascoli Piceno, S=Ascoli Piceno, C=IT, SERIALNUMBER=AP - 111997, OID.2.5.4.15=Private Organization, OID.1.3.6.1.4.1.311.60.2.1.2=Ascoli Piceno, OID.1.3.6.1.4.1.311.60.2.1.3=IT"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "Supremo.exe"
+      ],
+      "secondaryCommandLineSearchStrings": [
+        "SupremoHelper.exe",
+        "SupremoService.exe"
+      ]
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": [],
+      "tcpRemote": [5938],
+      "udpRemote": []
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": true,
+      "remediationScripts": ["Uninstall-Supremo.ps1"],
+      "arp": {
+        "uninstallKeyNames": [],
+        "uninstallKeyDisplayNamePropertySubtrings": []
+      }
+    }
+  },
+  {
+    "displayName": "AnyDesk",
+    "productName": "AnyDesk",
+    "authenticodeCommonName":["CN=AnyDesk Software GmbH, O=AnyDesk Software GmbH, L=Stuttgart, S=Baden-Württemberg, C=DE"],
+    "commandLine": {
+      "primaryCommandLineSearchStrings": [
+        "AnyDesk.exe"
+      ],
+      "secondaryCommandLineSearchStrings": []
+    },
+    "networkPorts": {
+      "tcpLocal": [],
+      "udpLocal": [],
+      "tcpRemote": [6568],
+      "udpRemote": []
+    },
+    "appx": {
+      "available": false,
+      "packageName": []
+    },
+    "uninstall": {
+      "portableVersionAvailable": true,
+      "remediationScripts": ["Uninstall-AnyDesk.ps1"],
+      "arp": {
+        "uninstallKeyNames": [],
+        "uninstallKeyDisplayNamePropertySubtrings": ["AnyDesk"]
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "name": "AnyViewer",
+    "publisher": "AOMEI International Network Limited",
+    "primaryCommandLineSearchStrings": ["AVCore.exe"],
+    "secondaryCommandLineSearchStrings": [],
+    "tcpPorts": [30196],
+    "udpPorts": [30192, 30193],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["AnyViewer", "#RemovePortableExec"]
+  },
+  {
+    "name": "LiteManager",
+    "publisher": "LiteManagerTeam",
+    "primaryCommandLineSearchStrings": ["ROMServer.exe"],
+    "secondaryCommandLineSearchStrings": ["ROMFUSClient"],
+    "tcpPorts": [5650],
+    "udpPorts": [],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["LiteManager", "#RemovePortableExec"]
+  },
+  {
+    "name": "RuskDesk",
+    "publisher": "PURSLANE",
+    "primaryCommandLineSearchStrings": ["rustdesk.exe"],
+    "secondaryCommandLineSearchStrings": [],
+    "tcpPorts": [21114,21115,21116,21117,21118,21119],
+    "udpPorts": [21116],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["RuskDesk", "#RemovePortableExec"]
+  },
+  {
+    "name": "LogMeIn Rescue"
+  },
+  {
+    "name": "GoToMyPC",
+    "nothing": "testdata6"
+  },
+  {
+    "name": "UltraViewer",
+    "publisher": "DucFabulous",
+    "primaryCommandLineSearchStrings": ["UltraViewer_Desktop.exe"],
+    "secondaryCommandLineSearchStrings": [],
+    "tcpPorts": [2112],
+    "udpPorts": [],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["UltraViewer", "#RemovePortableExec"]
+  },
+  {
+    "name": "AeroAdmin",
+    "publisher": "AeroAdmin LLC",
+    "primaryCommandLineSearchStrings": ["AeroAdmin.exe"],
+    "secondaryCommandLineSearchStrings": [],
+    "tcpPorts": [],
+    "udpPorts": [52100],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["#RemovePortableExec"]
+  },
+  {
+    "name": "RealVNC",
+    "publisher": "RealVNC",
+    "primaryCommandLineSearchStrings": ["vncserver.exe"],
+    "secondaryCommandLineSearchStrings": [],
+    "tcpPorts": [5900],
+    "udpPorts": [],
+    "appxVersionAvailable": false,
+    "uninstallKeyDisplayNameSubtring": ["RealVNC Server", "RealVNC Connect"]
+  },
+  {
+    "name": "ScreenConnect"
+  }
+
+
+]

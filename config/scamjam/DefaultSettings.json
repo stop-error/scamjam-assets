@@ -1,0 +1,30 @@
+{
+    "updateConfig": {
+        "updateChannel": "ScamJamBroad",
+        "automaticUpdatesEnabled": true
+    },
+    "securityConfig": {
+        "windowsAppLocker": false,
+        "dnsClient": true,
+        "commandLine": true,
+        "networkPorts": true,
+        "authenticodeCommonName": true,
+        "productName": true
+    },
+    "userAllowlistsConfig": {
+        "userDnsAllowlist": [
+            
+        ],
+        "userCommandLineAllowlist": [
+            
+        ]
+    },
+    "userBlocklistsConfig": {
+        "userDnsBlocklist": [
+            
+        ],
+        "userCommandLineBlocklist": [
+            
+        ]
+    }
+}
