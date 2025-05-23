@@ -1,5 +1,5 @@
 # Pi-hole Scamjam-dyndns Blocklist
-# Last updated: 2025-05-22 15:13:12
+# Last updated: 2025-05-23 15:12:52
 # Total domains: 1399
 
 0.0.0.0 0000000000000000000000.com
