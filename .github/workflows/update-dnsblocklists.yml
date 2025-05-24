@@ -41,7 +41,7 @@ jobs:
           echo "✅ Pi-hole-Blocklist-Optimizer repository cloned successfully"
           ls
 
-      - name: Run Optimizer
+      - name: Run Optimizer and stage files for upload
         run: |
           cd optimizer
           echo "Starting Pi-hole Blocklist Optimizer..."
@@ -72,6 +72,11 @@ jobs:
             echo "📄 Contents of blocklist_stats.json:"
             cat pihole_blocklists/blocklist_stats.json
           fi
+
+          rm _production_lists.txt
+          rm _production_stats.json
+          rm all_domains.txt
+          cp ../threats/dns/scamjam-remoteaccess.txt .scamjam-remoteaccess.txt
 
       - uses: ryand56/r2-upload-action@latest
         with:
