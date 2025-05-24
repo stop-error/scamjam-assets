@@ -73,7 +73,6 @@ jobs:
             cat pihole_blocklists/blocklist_stats.json
           fi
 
-      - name: Upload to r2
       - uses: ryand56/r2-upload-action@latest
         with:
           r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
