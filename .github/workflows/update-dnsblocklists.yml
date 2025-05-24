@@ -6,26 +6,22 @@ name: Update ScamJam DNS Blocklists
 on:
   schedule:
     - cron: '0 15 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - "threats/dns/**"
   workflow_dispatch:
 
-permissions:
-  contents: write
   
 jobs:
   update-scamjam-blocklists:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.check_changes.outputs.UPLOAD_TO_R2 }}
 
 
-
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
           
 
       - name: Set up Python
@@ -77,124 +73,17 @@ jobs:
             cat pihole_blocklists/blocklist_stats.json
           fi
 
-      - name: Check for changes in blocklists
-        id: check_changes
-        run: |
-          # Ensure lists directory exists
-          # mkdir -p lists
-          
-          # Define the files to check - ONLY the category files
-          FILES=("scamjam-threat.txt" "scamjam-nrd.txt" "scamjam-dyndns.txt")
-          
-          # Track if any files have changed
-          CHANGES_DETECTED=false
-          CHANGED_FILES=""
-          
-          # Compare each file if it exists
-          echo "📋 Checking for changes in blocklist files:"
-          for file in "${FILES[@]}"; do
-            if [ -f "optimizer/pihole_blocklists_prod/$file" ]; then
-              # Get file sizes for comparison
-              NEW_SIZE=$(du -h "optimizer/pihole_blocklists_prod/$file" | cut -f1)
-              
-              if [ -f "threats/dns/$file" ]; then
-                OLD_SIZE=$(du -h "threats/dns/$file" | cut -f1)
-                
-                # Use cmp to compare binary files
-                if ! cmp -s "optimizer/pihole_blocklists_prod/$file" "threats/dns/$file"; then
-                  echo "✅ Changes detected in $file (Old: $OLD_SIZE → New: $NEW_SIZE)"
-                  CHANGES_DETECTED=true
-                  CHANGED_FILES="$CHANGED_FILES $file"
-                  cp "optimizer/pihole_blocklists_prod/$file" "threats/dns/$file"
-                else
-                  echo "ℹ️ No changes in $file ($NEW_SIZE)"
-                fi
-              else
-                echo "🆕 New file: $file ($NEW_SIZE)"
-                CHANGES_DETECTED=true
-                CHANGED_FILES="$CHANGED_FILES $file"
-                cp "optimizer/pihole_blocklists_prod/$file" "threats/dns/$file"
-              fi
-            else
-              echo "⚠️ Warning: $file not found in optimizer output"
-            fi
-          done
-          
-          # Set outputs for later steps
-          echo "changes_detected=$CHANGES_DETECTED" >> $GITHUB_OUTPUT
-          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
-          
-          if [ "$CHANGES_DETECTED" = true ]; then
-            echo "✅ Changes detected in blocklists. Will update repository."
-            echo "UPLOAD_TO_R2=true" >> $GITHUB_OUTPUT
-          else
-            echo "ℹ️ No changes detected in any blocklists. Repository will remain unchanged."
-          fi
-
-      - name: Configure Git
-        run: |
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git config user.name "${{ github.actor }}"
-          
-          echo "✅ Git user configured"
-          
-      - name: Commit and push changes
-        if: steps.check_changes.outputs.changes_detected == 'true'
-        run: |
-            # Add the updated blocklist files
-            git add threats/dns/*.txt
-          
-            # Create detailed commit message with stats
-            COMMIT_MSG="Daily update of blocklists $(date +%F)"
-            COMMIT_MSG="$COMMIT_MSG\n\n"
-          
-            if [ ! -z "${{ steps.check_changes.outputs.changed_files }}" ]; then
-              COMMIT_MSG="$COMMIT_MSG- Updated:${{ steps.check_changes.outputs.changed_files }}\n"
-            fi
-          
-            # Double-check if there are changes to commit (safety check)
-            if git diff --staged --quiet; then
-              echo "ℹ️ No changes to commit (final verification)"
-            else
-              echo "📝 Committing changes with message:"
-              echo -e "$COMMIT_MSG"
-              git commit -m "$COMMIT_MSG"
-            
-              echo "🚀 Pushing changes with LFS..."
-              git push origin main
-              echo "✅ Push completed successfully"
-            fi
-        
-          
-      - name: No changes report
-        if: steps.check_changes.outputs.changes_detected != 'true'
-        run: |
-          echo "ℹ️ No changes detected in any blocklist files."
-          echo "Repository remains unchanged. Workflow completed successfully."
-
-          
-  upload-to-R2:
-    runs-on: ubuntu-latest
-    needs: update-scamjam-blocklists
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
+      - name: Upload to r2
       - uses: ryand56/r2-upload-action@latest
-        if: "${{ needs.update-scamjam-blocklists.outputs.output1 == 'true' }}"
         with:
           r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: threats/dns/
-          destination-dir: scamjam-assets/threats/dns/ # Can be anything as long as it is an actual path
+          source-dir: optimizer/pihole_blocklists_prod
+          destination-dir: threats/dns/ # Can be anything as long as it is an actual path
           output-file-url: true # defaults to true
           multipart-size: 100 # If the file size is greater than the value provided here, then use multipart upload
           max-retries: 5 # The maximum number of retries it takes to upload a multipart chunk until it moves on to the next part
           multipart-concurrent: true # Whether to concurrently upload a multipart chunk
           keep-file-fresh: true # defaults to false
-
-
-
