@@ -76,7 +76,7 @@ jobs:
           rm pihole_blocklists_prod/_production_lists.txt
           rm pihole_blocklists_prod/_production_stats.json
           rm pihole_blocklists_prod/all_domains.txt
-          cp ../threats/dns/scamjam-remoteaccess.txt .scamjam-remoteaccess.txt
+          cp ../threats/dns/scamjam-remoteaccess.txt pihole_blocklists_prod/scamjam-remoteaccess.txt
 
       - uses: ryand56/r2-upload-action@latest
         with:
