@@ -10,6 +10,7 @@ on:
       - main
     paths:
       - "threats/remote-access/**"
+      - "threats/system-utilities/**"
       
   workflow_dispatch:
 
