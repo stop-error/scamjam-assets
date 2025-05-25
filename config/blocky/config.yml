@@ -29,13 +29,13 @@ blocking:
   blockType: nxDomain
   denylists:
     scamjam-threat:
-      - https://scamjam.app/scamjam-assets/threats/dns/scamjam-threat.txt
+      - https://assets.scamjam.app/threats/dns/scamjam-threat.txt
     scamjam-nrd:
-      - https://scamjam.app/scamjam-assets/threats/dns/scamjam-nrd.txt
+      - https://assets.scamjam.app/threats/dns/scamjam-nrd.txt
     scamjam-dyndns:
-      - https://scamjam.app/scamjam-assets/threats/dns/scamjam-dyndns.txt
+      - https://assets.scamjam.app/threats/dns/scamjam-dyndns.txt
     scamjam-remoteaccess:
-      - https://scamjam.app/scamjam-assets/threats/dns/scamjam-remoteaccess.txt
+      - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
   clientGroupsBlock:
     default:
       - scamjam-threat
