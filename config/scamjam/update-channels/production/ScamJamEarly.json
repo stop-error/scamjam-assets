@@ -1,22 +1,10 @@
 [
   {
     "componentName": "ScamJam",
-    "targetRelease": "v1.00"
+    "targetRelease": "v1.0.0"
   },
   {
-    "componentName": "PowerShell",
-    "targetRelease": "v7.5.1"
-  },
-  {
-    "componentName": "PowerShellAux",
-    "targetRelease": "v7.5.1"
-  },
-  {
-    "componentName": "Blocky",
-    "targetRelease": "v0.25"
-  },
-  {
-    "componentName": "Shawl",
-    "targetRelease": "v1.7.0"
+    "componentName": "scamjam-dns",
+    "targetRelease": "v0.26.2"
   }
 ]

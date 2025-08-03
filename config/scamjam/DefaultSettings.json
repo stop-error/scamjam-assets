@@ -8,7 +8,7 @@
         "dnsClient": true,
         "commandLine": true,
         "networkPorts": true,
-        "authenticodeCommonName": true,
+        "windowsAuthenticodeCommonName": true,
         "productName": true
     },
     "userAllowlistsConfig": {

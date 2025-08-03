@@ -49,7 +49,7 @@
                 "dnsClient",
                 "commandLine",
                 "networkPorts",
-                "authenticodeCommonName",
+                "windowsAuthenticodeCommonName",
                 "productName"
             ],
             "properties": {
@@ -59,7 +59,7 @@
                 },
                 "dnsClient": {
                     "type": "boolean",
-                    "description": "Enables DNS filtering via Blocky's recursive DNS client and by setting DNS to localhost on active interfaces. Blocky uses block lists defined in config.yml in ScamJam-Assets"
+                    "description": "Enables DNS filtering via ScamJam's recursive DNS client and by setting DNS to localhost on active interfaces. ScamJam uses block lists defined in config.yml in ScamJam-Assets"
                 },
                 "commandLine": {
                     "type": "boolean",
@@ -69,7 +69,7 @@
                     "type": "boolean",
                     "description": "Look for network ports known to be used by remote access tools, trace back to executible file. Ports are defined in ScamJam-Assets Executible ThreatData file (tcpPorts and udpPorts)"
                 },
-                "authenticodeCommonName": {
+                "windowsAuthenticodeCommonName": {
                     "type": "boolean",
                     "description": "Check executible file's Authenticode Common Name against developer Common Names in ScamJam-Assets Executible ThreatData file (publisher). Used to prevent bypassing protection by chaning the program's file name."
                 },
