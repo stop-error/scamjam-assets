@@ -1,12 +1,15 @@
+queryLog:
+  type: console
+  fields:
+  - responseReason
+  - duration
 upstreams:
   strategy: strict
-  timeout: 1s
+  timeout: 5s
   groups:
     default:
       - https://dns.quad9.net/dns-query
       - https://security.cloudflare-dns.com/dns-query
-      - 94.140.14.14
-      - 2a10:50c0::1:ff
 bootstrapDns:
   - upstream: https://dns.quad9.net/dns-query
     ips:
@@ -23,7 +26,7 @@ bootstrapDns:
 blocking:
   loading:
     maxErrorsPerSource: -1
-    strategy: fast
+    strategy: blocking
     downloads:
       timeout: 4m
   blockType: nxDomain
@@ -36,21 +39,16 @@ blocking:
       - https://assets.scamjam.app/threats/dns/scamjam-dyndns.txt
     scamjam-remoteaccess:
       - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
+    scamjam-spamtld:
+      - https://assets.scamjam.app/threats/dns/scamjam-spamtld.txt
   clientGroupsBlock:
     default:
       - scamjam-threat
       - scamjam-nrd
       - scamjam-dyndns
       - scamjam-remoteaccess
-#hostsFile:
-  #sources: 
-    #- scamjam-hosts.txt
-  #hostsTTL: 1h
-  #loading:
-    #strategy: fast
-    #refreshPeriod: 1h
 caching:
   cacheTimeNegative: 30m
 ports:
-  dns: 127.0.0.1:53
-
+  http: 127.0.0.1:4000
+  https: 127.0.0.1:443
