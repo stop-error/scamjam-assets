@@ -51,7 +51,7 @@
     },
     {
       "name": "ScamJam Remote Access",
-      "source": "/config/threats/dns/scamjam-remoteaccess.txt",
+      "source": "/threats/dns/scamjam-remoteaccess.txt",
       "type": "adblock",
       "transformations": ["RemoveComments", "Compress", "Deduplicate"]
     }
