@@ -23,9 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
           
-    #action to download google safe browsing
 
-      - name: Install node
       - uses: actions/setup-node@v4
         with:
           node-version: 24
