@@ -23,60 +23,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
           
+    #action to download google safe browsing
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install node
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.13'
-          
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests tqdm
-          echo "✅ Python dependencies installed successfully"
-          
-      - name: Clone Optimizer repository
-        run: |
-          git clone https://github.com/zachlagden/Pi-hole-Blocklist-Optimizer.git optimizer
-          echo "✅ Pi-hole-Blocklist-Optimizer repository cloned successfully"
-          ls
+          node-version: *
+      - run: | 
+          mkdir upload
+          npm i -g @adguard/hostlist-compiler
+          hostlist-compiler -c ./config/hosts-compiler/config.json -o /upload/scamjam-combined-all.txt
 
-      - name: Run Optimizer and stage files for upload
-        run: |
-          cd optimizer
-          echo "Starting Pi-hole Blocklist Optimizer..."
-          python pihole_downloader.py --config ../config/pi-hole-blocklist-optimizer/blocklists.conf --prod-dir pihole_blocklists_prod
           
-          # Check if the optimizer produced the expected files
-          if [ ! -f "pihole_blocklists_prod/all_domains.txt" ]; then
-            echo "❌ Error: Optimizer did not produce all_domains.txt file"
-            exit 1
-          fi
-          echo "✅ Optimizer completed successfully"
-          
-          # List the files and their sizes for debugging
-          echo "📁 Files in pihole_blocklists_prod:"
-          du -h pihole_blocklists_prod/*.txt | sort -h
-          echo ""
-          
-          # Debug: Check the content of stats files
-          echo "📊 Stats files:"
-          find . -name "*stats.json" | xargs ls -la
-          
-          if [ -f "pihole_blocklists_prod/_production_stats.json" ]; then
-            echo "📄 Contents of _production_stats.json:"
-            cat pihole_blocklists_prod/_production_stats.json
-          fi
-          
-          if [ -f "pihole_blocklists/blocklist_stats.json" ]; then
-            echo "📄 Contents of blocklist_stats.json:"
-            cat pihole_blocklists/blocklist_stats.json
-          fi
-
-          rm pihole_blocklists_prod/_production_lists.txt
-          rm pihole_blocklists_prod/_production_stats.json
-          rm pihole_blocklists_prod/all_domains.txt
-          cp ../threats/dns/scamjam-remoteaccess.txt pihole_blocklists_prod/scamjam-remoteaccess.txt
 
       - uses: ryand56/r2-upload-action@latest
         with:
@@ -84,7 +42,7 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: optimizer/pihole_blocklists_prod
+          source-dir: upload
           destination-dir: threats/dns/ # Can be anything as long as it is an actual path
           output-file-url: true # defaults to true
           multipart-size: 100 # If the file size is greater than the value provided here, then use multipart upload
