@@ -1,0 +1,60 @@
+{
+  "name": "ScamJam DNS Protection",
+  "description": "Merged blocklist powering ScamJam DNS protection.",
+  "homepage": "https://scamajam.app/",
+  "license": "GPLv3",
+  "version": "1.0.0.0",
+  "sources": [
+    {
+      "name": "HaGeZi's Pop-Up Ads DNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's Threat Intelligence Feeds DNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's DynDNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's DynDNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's The World's Most Abused TLDs - Aggressive",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"],
+      "exclusions_sources": ["https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt"]
+
+    },
+    {
+      "name": "xRuffKez NRD 30 days Mini (Adblock Syntax)",
+      "source": "https://raw.githubusercontent.com/xRuffKez/NRD/refs/heads/main/lists/30-day-mini/adblock/nrd-30day-mini_adblock.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "Phishing Army | The Blocklist to filter Phishing",
+      "source": "https://phishing.army/download/phishing_army_blocklist.txt",
+      "type": "hosts",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "ScamJam Remote Access",
+      "source": "/config/threats/dns/scamjam-remoteaccess.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    }
+  ],
+  "transformations": ["Deduplicate", "Compress"]
+}
