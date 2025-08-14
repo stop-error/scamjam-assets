@@ -28,7 +28,7 @@ jobs:
       - name: Install node
       - uses: actions/setup-node@v4
         with:
-          node-version: *
+          node-version: 24
       - run: | 
           mkdir upload
           npm i -g @adguard/hostlist-compiler
