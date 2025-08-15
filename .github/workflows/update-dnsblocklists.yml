@@ -30,7 +30,7 @@ jobs:
       - run: | 
           npm i -g @adguard/hostlist-compiler
           mkdir upload
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-config.json -o upload/scamjam-combined.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-combined.json -o upload/scamjam-combined.txt
           hostlist-compiler -c config/hosts-compiler/hostlist-compiler-popup.json -o upload/scamjam-popup.txt
           hostlist-compiler -c config/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
           hostlist-compiler -c config/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
