@@ -50,5 +50,6 @@ blocking:
 caching:
   cacheTimeNegative: 30m
 ports:
+  dns: 53
   http: 127.0.0.1:4000
   https: 127.0.0.1:443
