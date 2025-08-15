@@ -28,9 +28,21 @@ jobs:
         with:
           node-version: 24
       - run: | 
-          mkdir upload
           npm i -g @adguard/hostlist-compiler
+          mkdir upload
           hostlist-compiler -c config/hosts-compiler/hostlist-compiler-config.json -o upload/scamjam-combined.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-popup.json -o upload/scamjam-popup.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-tld.json -o upload/scamjam-tld.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-nrd.json -o upload/scamjam-nrd.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-phishing.json -o upload/scamjam-phishing.txt
+          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
+
+
+          
+          
+
 
           
 

@@ -1,0 +1,15 @@
+{
+  "name": "ScamJam DNS DynDns",
+  "description": "DynDNS blocklist powering ScamJam DNS protection.",
+  "homepage": "https://scamajam.app/",
+  "license": "GPLv3",
+  "version": "1.0.0.0",
+  "sources": [
+    {
+      "name": "HaGeZi's DynDNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

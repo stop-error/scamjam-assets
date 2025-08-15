@@ -1,0 +1,15 @@
+{
+  "name": "ScamJam DNS DynDns",
+  "description": "NRD blocklist powering ScamJam DNS protection.",
+  "homepage": "https://scamajam.app/",
+  "license": "GPLv3",
+  "version": "1.0.0.0",
+  "sources": [
+    {
+      "name": "xRuffKez NRD 30 days Mini (Adblock Syntax)",
+      "source": "https://raw.githubusercontent.com/xRuffKez/NRD/refs/heads/main/lists/30-day-mini/adblock/nrd-30day-mini_adblock.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

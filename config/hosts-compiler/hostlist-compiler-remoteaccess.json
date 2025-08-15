@@ -1,0 +1,15 @@
+{
+  "name": "ScamJam DNS DynDns",
+  "description": "Remote access blocklist powering ScamJam DNS protection.",
+  "homepage": "https://scamajam.app/",
+  "license": "GPLv3",
+  "version": "1.0.0.0",
+  "sources": [
+    {
+      "name": "ScamJam Remote Access",
+      "source": "threats/dns/scamjam-remoteaccess.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "ScamJam DNS Protection",
+  "name": "ScamJam DNS Combined",
   "description": "Merged blocklist powering ScamJam DNS protection.",
   "homepage": "https://scamajam.app/",
   "license": "GPLv3",
@@ -24,14 +24,8 @@
       "transformations": ["RemoveComments", "Compress", "Deduplicate"]
     },
     {
-      "name": "HaGeZi's DynDNS Blocklist",
-      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
-      "type": "adblock",
-      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
-    },
-    {
       "name": "HaGeZi's The World's Most Abused TLDs - Aggressive",
-      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds.txt",
       "type": "adblock",
       "transformations": ["RemoveComments", "Compress", "Deduplicate"],
       "exclusions_sources": ["https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt"]
