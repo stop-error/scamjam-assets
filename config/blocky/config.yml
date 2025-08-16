@@ -31,22 +31,11 @@ blocking:
       timeout: 4m
   blockType: nxDomain
   denylists:
-    scamjam-threat:
-      - https://assets.scamjam.app/threats/dns/scamjam-threat.txt
-    scamjam-nrd:
-      - https://assets.scamjam.app/threats/dns/scamjam-nrd.txt
-    scamjam-dyndns:
-      - https://assets.scamjam.app/threats/dns/scamjam-dyndns.txt
-    scamjam-remoteaccess:
-      - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
-    scamjam-spamtld:
-      - https://assets.scamjam.app/threats/dns/scamjam-spamtld.txt
+    scamjam-combined:
+      - https://assets.scamjam.app/threats/dns/scamjam-combined.txt
   clientGroupsBlock:
     default:
-      - scamjam-threat
-      - scamjam-nrd
-      - scamjam-dyndns
-      - scamjam-remoteaccess
+      - scamjam-combined
 caching:
   cacheTimeNegative: 30m
 ports:
