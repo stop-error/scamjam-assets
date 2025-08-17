@@ -1,0 +1,34 @@
+{
+	admin off
+}
+
+dns.scamjam.app {
+	log {
+		output stdout
+		format filter {
+			fields {
+				request>remote_ip ip_mask {
+					ipv4 24
+					ipv6 56
+				}
+				request>client_ip ip_mask {
+					ipv4 24
+					ipv6 56
+				}
+				request>headers> delete
+				request>uri query {
+					replace dns query_redacted
+				}
+			}
+		}
+	}
+	reverse_proxy :8080
+	tls {
+		client_auth {
+			mode require_and_verify
+			trust_pool http {
+				endpoints https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem
+			}
+		}
+	}
+}
