@@ -40,3 +40,4 @@ caching:
   cacheTimeNegative: 30m
 ports:
   http: localhost:8080
+  https: localhost:443
