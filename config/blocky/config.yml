@@ -23,7 +23,7 @@ bootstrapDns:
 blocking:
   loading:
     maxErrorsPerSource: -1
-    strategy: blocking
+    strategy: fast
     downloads:
       timeout: 4m
   blockType: nxDomain
@@ -52,4 +52,4 @@ blocking:
 caching:
   cacheTimeNegative: -1m
 ports:
-  dns: localhost:5353
+  dns: localhost:778

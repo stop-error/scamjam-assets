@@ -21,7 +21,7 @@
     },
     {
       "name": "HaGeZi's The World's Most Abused TLDs - Aggressive",
-      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds.txt",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt",
       "type": "adblock",
       "transformations": ["RemoveComments", "Compress", "Deduplicate"],
       "exclusions_sources": ["https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt"]
