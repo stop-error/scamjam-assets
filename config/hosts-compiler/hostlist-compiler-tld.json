@@ -1,9 +1,5 @@
 {
-  "name": "ScamJam DNS DynDns",
-  "description": "TLD blocklist powering ScamJam DNS protection.",
-  "homepage": "https://scamajam.app/",
-  "license": "GPLv3",
-  "version": "1.0.0.0",
+  "name": "ScamJam DNS TLD",
   "sources": [
     {
       "name": "HaGeZi's The World's Most Abused TLDs - Aggressive",

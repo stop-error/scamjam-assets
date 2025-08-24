@@ -1,9 +1,5 @@
 {
   "name": "ScamJam DNS Combined",
-  "description": "Merged blocklist powering ScamJam DNS protection.",
-  "homepage": "https://scamajam.app/",
-  "license": "GPLv3",
-  "version": "1.0.0.0",
   "sources": [
     {
       "name": "HaGeZi's Pop-Up Ads DNS Blocklist",

@@ -1,13 +1,19 @@
 {
   "name": "ScamJam DNS Threat",
-  "description": "Threat blocklist powering ScamJam DNS protection.",
-  "homepage": "https://scamajam.app/",
-  "license": "GPLv3",
-  "version": "1.0.0.0",
   "sources": [
     {
       "name": "HaGeZi's Threat Intelligence Feeds DNS Blocklist",
       "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
+      "type": "adblock"
+    }, 
+    {
+      "name": "Phishing Army | The Blocklist to filter Phishing",
+      "source": "https://phishing.army/download/phishing_army_blocklist.txt",
+      "type": "hosts"
+    },
+    {
+      "name": "HaGeZi's Pop-Up Ads DNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
       "type": "adblock"
     }
   ],
