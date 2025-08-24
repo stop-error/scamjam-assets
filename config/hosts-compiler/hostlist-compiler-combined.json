@@ -34,10 +34,9 @@
       "transformations": ["RemoveComments", "Compress", "Deduplicate"]
     },
     {
-      "name": "Phishing Army | The Blocklist to filter Phishing",
-      "source": "https://phishing.army/download/phishing_army_blocklist.txt",
-      "type": "hosts",
-      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+      "name": "phishing-filter | A blocklist of phishing websites, curated from OpenPhish, IPThreat and PhishTank",
+      "source": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-agh.txt",
+      "type": "adblock"
     },
     {
       "name": "ScamJam Remote Access",
