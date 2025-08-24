@@ -34,13 +34,21 @@ blocking:
       - https://assets.scamjam.app/threats/dns/scamjam-nrd.txt
     scamjam-remoteaccess:
       - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
-    scamjam-remoteaccess:
+    scamjam-threat:
       - https://assets.scamjam.app/threats/dns/scamjam-threat.txt
-    scamjam-remoteaccess:
-      -  https://assets.scamjam.app/threats/dns/scamjam-tld.txt
+    scamjam-tld:
+      - https://assets.scamjam.app/threats/dns/scamjam-tld.txt
+  allowlists:
+    scamjam-tld-allow:
+      - https://assets.scamjam.app/threats/dns/scamjam-tld-allow.txt
   clientGroupsBlock:
     default:
-      - scamjam-combined
+      - scamjam-dyndns
+      - scamjam-nrd
+      - scamjam-remoteaccess
+      - scamjam-threat
+      - scamjam-tld
+      - scamjam-tld-allow
 caching:
   cacheTimeNegative: -1m
 ports:
