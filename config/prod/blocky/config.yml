@@ -39,7 +39,7 @@ blocking:
     scamjam-tld:
       - https://assets.scamjam.app/threats/dns/scamjam-tld.txt
   allowlists:
-    scamjam-tld-allow:
+    scamjam-tld:
       - https://assets.scamjam.app/threats/dns/scamjam-tld-allow.txt
   clientGroupsBlock:
     default:
@@ -48,7 +48,6 @@ blocking:
       - scamjam-remoteaccess
       - scamjam-threat
       - scamjam-tld
-      - scamjam-tld-allow
 caching:
   cacheTimeNegative: -1m
 ports:
