@@ -9,8 +9,9 @@ on:
     branches:
       - main
     paths:
-      - "config/blocky/**"
-      - "config/scamjam/**"
+      - "config/prod/blocky/**"
+      - "config/prod/scamjam/**"
+      - "config/prod/ctrld/**"
       
   workflow_dispatch:
 
