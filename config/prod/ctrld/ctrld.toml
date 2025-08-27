@@ -1,6 +1,6 @@
 [service]
-    log_level = "debug"
-    log_path = "ctrld-debug.txt"
+    log_level = "fatal"
+    log_path = "ctrld.txt"
     cache_enable = false
     leak_on_upstream_failure = true
 
@@ -26,7 +26,7 @@
 
 [upstream]
   [upstream.0]
-    endpoint = "127.0.0.1:778"
+    endpoint = "127.0.0.2:5333"
     name = "localhost"
     timeout = 5000
     type = "legacy"

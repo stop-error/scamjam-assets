@@ -51,4 +51,4 @@ blocking:
 caching:
   cacheTimeNegative: -1m
 ports:
-  dns: localhost:778
+  dns: 127.0.0.2:5333
