@@ -31,13 +31,13 @@ jobs:
       - run: | 
           npm i -g @adguard/hostlist-compiler
           mkdir upload
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-combined.json -o upload/scamjam-combined.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-tld.json -o upload/scamjam-tld.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-tld-allow.json -o upload/scamjam-tld-allow.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-nrd.json -o upload/scamjam-nrd.txt
-          hostlist-compiler -c config/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-combined.json -o upload/scamjam-combined.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld.json -o upload/scamjam-tld.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld-allow.json -o upload/scamjam-tld-allow.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-nrd.json -o upload/scamjam-nrd.txt
+          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
 
 
           
