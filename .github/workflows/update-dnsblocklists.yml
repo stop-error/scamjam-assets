@@ -52,8 +52,10 @@ jobs:
           fi
           echo "Optimizer completed successfully"
 
-          wget https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt -O optimizer/upload/scamjam-tld.txt
-          wget https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt -O optimizer/upload/scamjam-tld-allow.txt
+          cd upload
+
+          wget -O scamjam-tld.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt
+          wget -O scamjam-tld-allow.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt
           
 
       - uses: ryand56/r2-upload-action@latest
