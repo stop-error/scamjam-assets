@@ -57,12 +57,7 @@ jobs:
           wget -O scamjam-tld.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt
           wget -O scamjam-tld-allow.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt
           
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "@@"
-          replace: ""
-          regex: false
+          sed -i -e 's/@@//g' spam-tlds-adblock-allow.txt
 
       - uses: ryand56/r2-upload-action@latest
         with:
