@@ -1,0 +1,11 @@
+{
+  "name": "ScamJam DNS Threat",
+  "sources": [
+    {
+      "name": "HaGeZi's Pop-Up Ads DNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

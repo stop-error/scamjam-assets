@@ -1,0 +1,16 @@
+{
+  "name": "ScamJam DNS Threat",
+  "sources": [
+    {
+      "name": "HaGeZi's Threat Intelligence Feeds DNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
+      "type": "adblock"
+    }, 
+    {
+      "name": "phishing-filter | A blocklist of phishing websites, curated from OpenPhish, IPThreat and PhishTank",
+      "source": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-agh.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

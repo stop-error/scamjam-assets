@@ -1,0 +1,11 @@
+{
+  "name": "ScamJam DNS DynDns",
+  "sources": [
+    {
+      "name": "HaGeZi's DynDNS Blocklist",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt",
+      "type": "adblock"
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}

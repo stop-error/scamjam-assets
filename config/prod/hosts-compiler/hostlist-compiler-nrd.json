@@ -1,0 +1,30 @@
+{
+  "name": "ScamJam DNS NRD",
+  "sources": [
+    {
+      "name": "HaGeZi's NRD from 7 days ago to yesterday (the last day)",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nrd7.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's NRD from 14 days ago to 8 days ago",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nrd14-8.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's NRD from 21 days ago to 15 days ago",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nrd21-15.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    },
+    {
+      "name": "HaGeZi's NRD from 28 days ago to 22 days ago",
+      "source": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nrd28-22.txt",
+      "type": "adblock",
+      "transformations": ["RemoveComments", "Compress", "Deduplicate"]
+    }
+  ],
+  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+}
