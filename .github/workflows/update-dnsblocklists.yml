@@ -11,7 +11,7 @@ on:
       - main
     paths:
       - "threats/dns/**"
-      - "config/hosts-compiler/**"
+      - "config/blocklists-optimizer/**"
   workflow_dispatch:
 
   
