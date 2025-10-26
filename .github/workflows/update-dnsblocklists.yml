@@ -40,7 +40,7 @@ jobs:
 
       - name: Run Optimizer
         run: |
-          cp scamjam-assets/config/prod/blocklists-optimizer/blocklists.conf optimizer/
+          cp config/prod/blocklists-optimizer/blocklists.conf optimizer/
           cd optimizer
           echo "Starting Pi-hole Blocklist Optimizer..."
           python pihole_downloader.py --prod-dir upload
