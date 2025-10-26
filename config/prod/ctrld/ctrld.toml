@@ -1,8 +1,10 @@
 [service]
-    log_level = "fatal"
+    log_level = "error"
     log_path = "ctrld.txt"
     cache_enable = false
     leak_on_upstream_failure = true
+    dns_watchdog_enabled = true
+
 
 [listener]
   [listener.0]
@@ -17,7 +19,9 @@
   ]
 
     rules = [
+      
     ]
+    
 
 [network]
   [network.0]

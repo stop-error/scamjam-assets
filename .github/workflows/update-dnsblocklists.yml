@@ -22,25 +22,41 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-          
+        uses: actions/checkout@v4        
 
-      - uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: 24
-      - run: | 
-          npm i -g @adguard/hostlist-compiler
-          mkdir upload
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-combined.json -o upload/scamjam-combined.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld.json -o upload/scamjam-tld.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld-allow.json -o upload/scamjam-tld-allow.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-nrd.json -o upload/scamjam-nrd.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
-
-
+          python-version: '3.13'
           
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests tqdm
+
+      - name: Clone Optimizer repository
+        run: |
+          git clone https://github.com/zachlagden/Pi-hole-Blocklist-Optimizer.git optimizer
+
+      - name: Run Optimizer
+        run: |
+          cp scamjam-assets/config/prod/blocklists-optimizer/blocklists.conf optimizer/
+          cd optimizer
+          echo "Starting Pi-hole Blocklist Optimizer..."
+          python pihole_downloader.py --prod-dir upload
+
+          # Check if the optimizer produced the expected files
+          if [ ! -f "upload/all_domains.txt" ]; then
+            echo "Error: Optimizer did not produce all_domains.txt file"
+            exit 1
+          fi
+          echo "Optimizer completed successfully"
+
+          wget -P /upload/ -O scamjam-tld.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-aggressive.txt
+          wget -P /upload/ -O scamjam-tld-allow.txt https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock-allow.txt
+
+
+
           
       - uses: richardrigutins/replace-in-files@v2
         with:

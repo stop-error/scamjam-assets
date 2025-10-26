@@ -36,6 +36,8 @@ blocking:
       - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
       - https://assets.scamjam.app/threats/dns/scamjam-threat.txt
+    scamjam-popup:
+      - https://assets.scamjam.app/threats/dns/scamjam-popup.txt
     scamjam-tld:
       - https://assets.scamjam.app/threats/dns/scamjam-tld.txt
   allowlists:
