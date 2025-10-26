@@ -25,6 +25,5 @@
       "type": "adblock",
       "transformations": ["RemoveComments", "Compress", "Deduplicate"]
     }
-  ],
-  "transformations": ["RemoveComments", "Deduplicate", "Compress"]
+  ]
 }
