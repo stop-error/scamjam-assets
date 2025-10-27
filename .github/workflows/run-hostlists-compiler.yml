@@ -31,6 +31,9 @@ jobs:
       - run: | 
           npm i -g @adguard/hostlist-compiler
           mkdir upload
+
+
+
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-threat.json -o upload/scamjam-threat.txt
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-popup.json -o upload/scamjam-popup.txt
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
@@ -39,6 +42,9 @@ jobs:
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
 
           cd upload
+
+          wget -O scamjam-nrd-7.txt https://cebeerre.github.io/dnsblocklists/NRD/nrd7_asterisk.txt
+          wget -O scamjam-nrd14-8.txt https://cebeerre.github.io/dnsblocklists/NRD/nrd14-8_asterisk.txt 
 
           sed -i -e 's/@@//g' scamjam-tld-allow.txt
 
@@ -56,9 +62,6 @@ jobs:
 
           sed -i -e '/^!/d' scamjam-tld-allow.txt
           sed -i -e '/^\[/d' scamjam-tld-allow.txt
-
-          sed -i -e '/^!/d' scamjam-nrd.txt
-          sed -i -e '/^\[/d' scamjam-nrd.txt
 
           sed -i -e '/^!/d' scamjam-remoteaccess.txt
           sed -i -e '/^\[/d' scamjam-remoteaccess.txt

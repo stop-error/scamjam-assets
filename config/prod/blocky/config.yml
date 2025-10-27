@@ -33,7 +33,6 @@ blocking:
     scamjam-nrd:
       - https://assets.scamjam.app/threats/dns/scamjam-nrd-7.txt
       - https://assets.scamjam.app/threats/dns/scamjam-nrd14-8.txt
-
     scamjam-remoteaccess:
       - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
