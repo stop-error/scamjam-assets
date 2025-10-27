@@ -59,7 +59,7 @@ jobs:
           sed -i -e '/^\[/d' scamjam-tld-allow.txt
 
           sed -i -e '/^!/d' scamjam-nrd.txt
-          sed -i -e '/^\[/d' camjam-nrd.txt
+          sed -i -e '/^\[/d' scamjam-nrd.txt
 
           sed -i -e '/^!/d' scamjam-remoteaccess.txt
           sed -i -e '/^\[/d' scamjam-remoteaccess.txt
