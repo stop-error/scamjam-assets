@@ -36,7 +36,6 @@ jobs:
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-dyndns.json -o upload/scamjam-dyndns.txt
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld.json -o upload/scamjam-tld.txt
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-tld-allow.json -o upload/scamjam-tld-allow.txt
-          hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-nrd.json -o upload/scamjam-nrd.txt
           hostlist-compiler -c config/prod/hosts-compiler/hostlist-compiler-remoteaccess.json -o upload/scamjam-remoteaccess.txt
 
           cd upload
