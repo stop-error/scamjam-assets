@@ -52,5 +52,6 @@ blocking:
       - scamjam-tld
 caching:
   cacheTimeNegative: -1m
+  maxTime: -1m
 ports:
   dns: 127.0.0.2:5333
