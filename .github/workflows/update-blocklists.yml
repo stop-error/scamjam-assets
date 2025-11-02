@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: update-blocklists
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: "30 0,12 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "threats/dns/**"
+      - "config/hosts-compiler/**"
+  workflow_dispatch:
+
+  
+jobs:
+  update-scamjam-blocklists:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - run: |
+          cd threats/dns
+
+          if [ -f "spam-tlds-adblock-allow.txt" ]; then
+            rm spam-tlds-adblock-allow.txt
+          fi
+
+          wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds-adblock-allow.txt
+          wget https://curbengh.github.io/malware-filter/phishing-filter-agh.txt
+
+          sed -i -e 's/@@//g' spam-tlds-adblock-allow.txt
+
+          
+
+          git add spam-tlds-adblock-allow.txt phishing-filter-agh.txt
+          git commit -m "update external blocklists hosted in repo"
+          git push
