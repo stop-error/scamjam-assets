@@ -18,6 +18,8 @@ on:
 jobs:
   update-scamjam-blocklists:
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
 
 
     steps:
