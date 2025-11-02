@@ -31,11 +31,10 @@ jobs:
           fi
 
           wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds-adblock-allow.txt
-          wget https://curbengh.github.io/malware-filter/phishing-filter-agh.txt
-
           sed -i -e 's/@@//g' spam-tlds-adblock-allow.txt
-
           
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}
 
           git add spam-tlds-adblock-allow.txt phishing-filter-agh.txt
           git commit -m "update external blocklists hosted in repo"
