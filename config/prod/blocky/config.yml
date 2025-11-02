@@ -29,21 +29,24 @@ blocking:
   blockType: nxDomain
   denylists:
     scamjam-dyndns:
-      - https://assets.scamjam.app/threats/dns/scamjam-dyndns.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/dyndns.txt
     scamjam-nrd:
-      - https://assets.scamjam.app/threats/dns/scamjam-nrd-7.txt
-      - https://assets.scamjam.app/threats/dns/scamjam-nrd14-8.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd7.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd14-8.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd21-15.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd28-22.txt
     scamjam-remoteaccess:
-      - https://assets.scamjam.app/threats/dns/scamjam-remoteaccess.txt
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
-      - https://assets.scamjam.app/threats/dns/scamjam-threat.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt
+      - https://cdn.jsdelivr.net/gh/stoperror/scamjam-assets@latest/threats/dns/phishing-filter-agh.txt
     scamjam-popup:
-      - https://assets.scamjam.app/threats/dns/scamjam-popup.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/popupads.txt
     scamjam-tld:
-      - https://assets.scamjam.app/threats/dns/scamjam-tld.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds-adblock-aggressive.txt
   allowlists:
     scamjam-tld:
-      - https://assets.scamjam.app/threats/dns/scamjam-tld-allow.txt
+      - https://cdn.jsdelivr.net/gh/stoperror/scamjam-assets@latest/threats/dns/spam-tlds-adblock-allow.txt
   clientGroupsBlock:
     default:
       - scamjam-dyndns
