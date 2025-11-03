@@ -33,7 +33,7 @@ jobs:
           fi
 
           wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-onlydomains.txt
-          sed -i -e 's/#//d' spam-tlds-onlydomains.txt
+          sed -i '/^#/d' spam-tlds-onlydomains.txt
           sed -i -e 's/^/\*./' spam-tlds-onlydomains.txt
           
           git config --global user.name "${{ github.actor }}"
