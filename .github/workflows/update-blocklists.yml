@@ -36,9 +36,13 @@ jobs:
           sed -i '/^#/d' spam-tlds-onlydomains.txt
           sed -i -e 's/^/\*./' spam-tlds-onlydomains.txt
           
+
+          wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-allow-onlydomains.txt
+          sed -i -e 's/^/\*./' spam-tlds-allow-onlydomains.txt
+
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}"
 
-          git add spam-tlds-onlydomains.txt
+          git add spam-tlds-onlydomains.txt spam-tlds-allow-onlydomains.txt
           git commit -m "update external blocklists hosted in repo"
           git push

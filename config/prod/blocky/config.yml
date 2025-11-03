@@ -44,7 +44,7 @@ blocking:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-onlydomains.txt
   allowlists:
     scamjam-tld:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-allow-onlydomains.txt
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-allow-onlydomains.txt
   clientGroupsBlock:
     default:
       - scamjam-dyndns
