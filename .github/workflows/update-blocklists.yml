@@ -28,12 +28,13 @@ jobs:
       - run: |
           cd threats/dns
 
-          if [ -f "spam-tlds-adblock-allow.txt" ]; then
-            rm spam-tlds-adblock-allow.txt
+          if [ -f "spam-tlds-onlydomains.txt" ]; then
+            rm spam-tlds-onlydomains.txt
           fi
 
-          wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds-adblock-allow.txt
-          sed -i -e 's/@@//g' spam-tlds-adblock-allow.txt
+          wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-onlydomains.txt
+          sed -i -e 's/#//g' spam-tlds-onlydomains.txt
+          sed -i -e 's/^/\*./'          
           
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}"

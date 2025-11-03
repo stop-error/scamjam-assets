@@ -29,24 +29,22 @@ blocking:
   blockType: nxDomain
   denylists:
     scamjam-dyndns:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/dyndns.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
     scamjam-nrd:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd7.txt
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd14-8.txt
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd21-15.txt
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nrd28-22.txt
+      - https://cebeerre.github.io/dnsblocklists/NRD/nrd7_asterisk.txt
+      - https://cebeerre.github.io/dnsblocklists/NRD/nrd14-8_asterisk.txt
     scamjam-remoteaccess:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt
-      - https://cdn.jsdelivr.net/gh/stoperror/scamjam-assets@latest/threats/dns/phishing-filter-agh.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.txt
+      - https://curbengh.github.io/malware-filter/phishing-filter-wildcard.txt
     scamjam-popup:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/popupads.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/popupads.txt
     scamjam-tld:
-      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/spam-tlds-adblock-aggressive.txt
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-adblock-aggressive.txt
   allowlists:
     scamjam-tld:
-      - https://cdn.jsdelivr.net/gh/stoperror/scamjam-assets@latest/threats/dns/spam-tlds-adblock-allow.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-allow-onlydomains.txt
   clientGroupsBlock:
     default:
       - scamjam-dyndns
