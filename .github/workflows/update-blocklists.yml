@@ -39,6 +39,6 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}"
 
-          git add spam-tlds-adblock-allow.txt
+          git add spam-tlds-onlydomains.txt
           git commit -m "update external blocklists hosted in repo"
           git push
