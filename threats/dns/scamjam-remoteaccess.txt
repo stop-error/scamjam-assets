@@ -1,96 +1,96 @@
 # Windows Quick Assisst
-||support.services.microsoft.com^
+*.support.services.microsoft.com
 
 # Parsec
-||parsec.app^
+*.parsec.app
 
 # Zoho Assisst
-||zohoassist.com^
+*.zohoassist.com
 
 # RemotePC
-||remotepc.com^
-||remotedesktop.com^
+*.remotepc.com
+*.remotedesktop.com
 
 # TeamViewer
-||teamviewer.com^
+*.teamviewer.com
 
 # Supremo
-||nanosystems.com^
-||nanosystems.it^
-||supremocontrol.com^
+*.nanosystems.com
+*.nanosystems.it
+*.supremocontrol.com
 
 # Chrome Remote Desktop
-||remotedesktop.google.com^
-||remotedesktop-pa.googleapis.com^
+*.remotedesktop.google.com
+*.remotedesktop-pa.googleapis.com
 
 # AnyDesk
-||anydesk.com^
+*.anydesk.com
 
 # AnyViewer
-||anyviewer.com^
+*.anyviewer.com
 # TODO: get service urls, detect by port
 
 # LiteManager
-||litemanager.org^
-||litemanager.com^
+*.litemanager.org
+*.litemanager.com
 
 # Rustdesk
-||rustdesk.com^
+*.rustdesk.com
 
 # LogMeIn Rescue
-||logmeinrescue.com^
-||logmein-gateway.com^
+*.logmeinrescue.com
+*.logmein-gateway.com
 
 # GoToMyPC
-||gotomypc.com^
-||expertcity.com^
-||getgo.com^
-||getgoservices.com^
-||getgoservices.net^
+*.gotomypc.com
+*.expertcity.com
+*.getgo.com
+*.getgoservices.com
+*.getgoservices.net
 
 # UltraViewer
-||ultraviewer.net^
+*.ultraviewer.net
 
 # AeroAdmin
-||aeroadmin.com^
+*.aeroadmin.com
 
 # RealVNC
-||realvnc.com^
+*.realvnc.com
 
 # Getscreen
-||getscreen.me^
+*.getscreen.me
 
 # Distant Desktop 
-||distantdesktop.com^
+*.distantdesktop.com
 
 # DWService
-||apiremoteaccess.com^
-||dwservice.net^
+*.apiremoteaccess.com
+*.dwservice.net
 
 # HelpWire
-||helpwire.app^
+*.helpwire.app
 
 # FixMe.it
-||techinline.com^
-||fixme.it^
+*.techinline.com
+*.fixme.it
 
 # Splashtop
-||splashtop.com^
+*.splashtop.com
 
 # Jump Desktop
-||jumpdesktop.com^
+*.jumpdesktop.com
 
 # ManageEngine Remote Access Plus
-||remoteaccess.manageengine.com^
+*.remoteaccess.manageengine.com
 
 # Iperius Remote
-||iperiusremote.com^
+*.iperiusremote.com
 
 # Ultra VNC
-||uvnc.com^
+*.uvnc.com
 
 # ConnectWise ScreenConnect
-||screenconnect.com^
+*.screenconnect.com
 
 
 
