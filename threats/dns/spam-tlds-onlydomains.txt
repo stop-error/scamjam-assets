@@ -53,6 +53,7 @@
 *.consulting
 *.cool
 *.coupons
+*.courses
 *.credit
 *.cyou
 *.dad
