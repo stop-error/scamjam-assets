@@ -48,6 +48,7 @@
 *.click
 *.clothing
 *.club
+*.cm
 *.college
 *.computer
 *.consulting
