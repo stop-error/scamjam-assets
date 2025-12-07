@@ -36,6 +36,9 @@ jobs:
           sed -i '/^#/d' spam-tlds-onlydomains.txt
           sed -i -e 's/^/\*./' spam-tlds-onlydomains.txt
           
+          if [ -f "spam-tlds-allow-onlydomains.txt" ]; then
+            rm spam-tlds-allow-onlydomains.txt
+          fi
 
           wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-allow-onlydomains.txt
           sed -i -e 's/^/\*./' spam-tlds-allow-onlydomains.txt
