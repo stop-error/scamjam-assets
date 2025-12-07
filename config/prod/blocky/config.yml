@@ -31,7 +31,7 @@ blocking:
     scamjam-dyndns:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
     scamjam-nrd:
-      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/nrd-14days-free.txt
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/nrd-last-20-days.txt
     scamjam-remoteaccess:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
@@ -42,7 +42,7 @@ blocking:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-onlydomains.txt
   allowlists:
     scamjam-tld:
-      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-allow-onlydomains.txt
+      - https://cdn.statically.io/gh/stop-error/scamjam-assets/main/threats/dns/spam-tlds-allow-onlydomains.txt
   clientGroupsBlock:
     default:
       - scamjam-dyndns
