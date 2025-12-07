@@ -31,13 +31,11 @@ blocking:
     scamjam-dyndns:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
     scamjam-nrd:
-      - https://cebeerre.github.io/dnsblocklists/NRD/nrd7_asterisk.txt
-      - https://cebeerre.github.io/dnsblocklists/NRD/nrd14-8_asterisk.txt
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/nrd-14days-free.txt
     scamjam-remoteaccess:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.txt
-      - https://curbengh.github.io/malware-filter/phishing-filter-wildcard.txt
     scamjam-popup:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/popupads.txt
     scamjam-tld:
