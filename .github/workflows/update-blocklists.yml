@@ -54,6 +54,7 @@ jobs:
           cd nrd-list-downloader
 
           DAY_RANGE=14 ./nrd-list-downloader.sh
+          sed -i '/^#/d' nrd-14days-free.txt
           sed -i -e 's/^/\*./' nrd-14days-free.txt
           cp nrd-14days-free.txt ../threats/dns/nrd-14days-free.txt
           cd ../threats/dns/
