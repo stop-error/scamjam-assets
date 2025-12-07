@@ -56,7 +56,8 @@ jobs:
           DAY_RANGE=14 ./nrd-list-downloader.sh
           sed -i -e 's/^/\*./' nrd-14days-free.txt
           cp nrd-14days-free.txt ../threats/dns/nrd-14days-free.txt
-          git add ../threats/dns/nrd-14days-free.txt
+          cd ../threats/dns/
+          git add nrd-14days-free.txt
 
           
           git commit -m "update external blocklists hosted in repo"
