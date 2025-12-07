@@ -26,6 +26,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - run: |
+
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}"
+
           cd threats/dns
 
           if [ -f "spam-tlds-onlydomains.txt" ]; then
@@ -43,9 +47,17 @@ jobs:
           wget https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/spam-tlds-allow-onlydomains.txt
           sed -i -e 's/^/\*./' spam-tlds-allow-onlydomains.txt
 
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}"
-
           git add spam-tlds-onlydomains.txt spam-tlds-allow-onlydomains.txt
+
+          cd ../..
+          git clone https://github.com/PeterDaveHello/nrd-list-downloader.git
+          cd nrd-list-downloader
+
+          DAY_RANGE=14 ./nrd-list-downloader.sh
+          sed -i -e 's/^/\*./' nrd-14days-free.txt
+          cp nrd-14days-free.txt ../threats/dns/nrd-14days-free.txt
+          git add ../threats/dns/nrd-14days-free.txt
+
+          
           git commit -m "update external blocklists hosted in repo"
           git push
