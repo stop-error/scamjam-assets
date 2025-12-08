@@ -59,6 +59,7 @@ jobs:
           fi
 
           wget https://cdn.statically.io/gh/cenk/nrd/refs/heads/main/nrd-last-20-days.txt
+          sed -i '/^#/d' nrd-last-20-days.txt
           sed -i '/^$/d' nrd-last-20-days.txt
           sed -i -e 's/^/\*./' nrd-last-20-days.txt
 
