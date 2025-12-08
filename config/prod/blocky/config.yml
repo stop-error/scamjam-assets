@@ -31,7 +31,7 @@ blocking:
     scamjam-dyndns:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
     scamjam-nrd:
-      - https://cdn.statically.io/gh/stop-error/scamjam-assets/main/threats/dns/nrd-last-20-days.txt
+      - https://cdn.statically.io/gh/stop-error/scamjam-assets/refs/heads/main/threats/dns/nrd-last-20-days.txt?dev=1
     scamjam-remoteaccess:
       - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
     scamjam-threat:
