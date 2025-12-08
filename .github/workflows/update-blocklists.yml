@@ -35,6 +35,7 @@ jobs:
           cd threats/dns
 
           if [ -f "spam-tlds-onlydomains.txt" ]; then
+            echo 'delete onlydomains'
             rm spam-tlds-onlydomains.txt
           fi
 
@@ -44,6 +45,7 @@ jobs:
           sed -i -e 's/^/\*./' spam-tlds-onlydomains.txt
           
           if [ -f "spam-tlds-allow-onlydomains.txt" ]; then
+            echo 'delete allow-onlydomains'
             rm spam-tlds-allow-onlydomains.txt
           fi
 
@@ -52,10 +54,11 @@ jobs:
           sed -i -e 's/^/\*./' spam-tlds-allow-onlydomains.txt
 
           if [ -f "nrd-last-20-days.txt" ]; then
+            echo 'delete nrd'
             rm nrd-last-20-days.txt
           fi
 
-          wget https://cdn.statically.io/gh/cenk/nrd/main/nrd-last-20-days.txt
+          wget https://cdn.statically.io/gh/cenk/nrd/refs/heads/main/nrd-last-20-days.txt
           sed -i '/^$/d' nrd-last-20-days.txt
           sed -i -e 's/^/\*./' nrd-last-20-days.txt
 
