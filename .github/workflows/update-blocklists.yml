@@ -59,6 +59,7 @@ jobs:
           sed -i '/^$/d' nrd-last-20-days.txt
           sed -i -e 's/^/\*./' nrd-last-20-days.txt
 
+          git status
           git add nrd-last-20-days.txt
           git add spam-tlds-onlydomains.txt 
           git add spam-tlds-allow-onlydomains.txt
