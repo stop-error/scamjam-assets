@@ -48,33 +48,35 @@ jobs:
                   Write-Output "Downloading $File at $Url..."
                   Invoke-WebRequest $Url -OutFile $File
               } catch {
-                  Write-Error "Failed to download file $File! Will try to continue batch job." -ErrorAction SilentlyContinue
+                  Write-Error "Failed to download file $File! Will try to continue batch job." -ErrorAction Stop
               }
           
               try {
-                   Write-Output "Removing comments..."
-                  Get-Content $File | Where-Object {-not $_.Contains('#')} | Set-Content
+                  Write-Output "Removing comments..."
+                  $Temp = Get-Content $File | Where-Object {-not $_.Contains('#')}
+                  $Temp | Set-Content $File
               } catch {
-                  Write-Error "Failed to remove comments from $File! Will try to continue batch job." -ErrorAction SilentlyContinue
+                  Write-Error "Failed to remove comments from $File! Will try to continue batch job." -ErrorAction Stop
               }
-          
+              
               try {
                   Write-Output "Adding wildcards..."
-                  Get-Content $File | ForEach-Object { "*." + $_ }  | Set-Content
+                  $Temp = Get-Content $File | ForEach-Object { "*." + $_ }  
+                  $Temp | Set-Content $File
               } catch {
-                  Write-Error "Failed to add wildcards to $File! File will not be staged for upload. Will try to continue batch job." -ErrorAction SilentlyContinue
+                  Write-Error "Failed to add wildcards to $File! File will not be staged for upload. Will try to continue batch job." -ErrorAction Stop
                   if (Test-Path $File -PathType Leaf) {
                       Remove-Item $File
                   }
               }
 
-             # try {
+             try {
                   Write-Output "Copying $File" 
                   Copy-Item $File "../" -Force
-                  git add "../$File"
-              #} catch {
-                 # Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
-              #}
+                  #git add "../$File"
+              } catch {
+                 Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
+              }
             
           }
           
