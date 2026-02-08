@@ -52,12 +52,14 @@ jobs:
               }
           
               try {
+                   Write-Output "Removing comments..."
                   Get-Content $File | Where-Object {-not $_.Contains('#')} | Set-Content
               } catch {
                   Write-Error "Failed to remove comments from $File! Will try to continue batch job." -ErrorAction SilentlyContinue
               }
           
               try {
+                  Write-Output "Adding wildcards..."
                   Get-Content $File | ForEach-Object { "*." + $_ }  | Set-Content
               } catch {
                   Write-Error "Failed to add wildcards to $File! File will not be staged for upload. Will try to continue batch job." -ErrorAction SilentlyContinue
@@ -66,7 +68,6 @@ jobs:
                   }
               }
 
-            if (Test-Path $File -PathType Leaf) {
               try {
                   Write-Output "Copying $File" 
                   Copy-Item $File "../" -Force
@@ -74,8 +75,7 @@ jobs:
               } catch {
                   Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
               }
-            }
-          
+            
           }
           
           Set-Location "../"
