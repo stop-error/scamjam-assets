@@ -2,7 +2,7 @@ queryLog:
   type: console
 upstreams:
   strategy: strict
-  timeout: 5s
+  timeout: 2s
   groups:
     default:
       - https://dns.quad9.net/dns-query
@@ -24,32 +24,34 @@ blocking:
   loading:
     maxErrorsPerSource: -1
     strategy: fast
+    refreshPeriod: 2h
     downloads:
-      timeout: 4m
+      timeout: 2m
   blockType: nxDomain
+  blockTTL: 10s
   denylists:
     hagezi-dyndns:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
-    hagezi-nrd:
-      - https://cebeerre.github.io/dnsblocklists/NRD/nrd7_asterisk.txt
-      - https://cebeerre.github.io/dnsblocklists/NRD/nrd14-8_asterisk.txt
+    cenk-whoisnrd:
+      - https://stop-error.github.io/scamjam-blocklists/nrd-last-20-days.txt?dev=1
     scamjam-remoteaccess:
-      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
+      - https://stop-error.github.io/scamjam-blocklists/scamjam-remoteaccess.txt
     hagezi-threat:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.txt
     hagezi-popup:
       - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/popupads.txt
     hagezi-tld:
-      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-onlydomains.txt
+      - https://stop-error.github.io/scamjam-blocklists/spam-tlds-onlydomains.txt
   allowlists:
-    scamjam-tld:
-      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-allow-onlydomains.txt
+    hagezi-tld:
+      - https://stop-error.github.io/scamjam-blocklists/spam-tlds-allow-onlydomains.txt
   clientGroupsBlock:
     default:
-      - scamjam-dyndns
-      - scamjam-nrd
+      - hagezi-dyndns
+      - cenk-whoisnrd
       - scamjam-remoteaccess
-      - scamjam-threat
-      - scamjam-tld
+      - hagezi-threat
+      - hagezi-popup
+      - hagezi-tld
 ports:
   dns: 127.0.0.3:53
