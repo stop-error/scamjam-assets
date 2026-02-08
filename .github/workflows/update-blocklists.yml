@@ -73,8 +73,7 @@ jobs:
           }
           
           $Dir = Get-ChildItem
-          echo "Dir is $Dir"
-          echo "Dir has $Dir.Name"
+          $Dir
           foreach ($File in $Dir) {
           
               try {
