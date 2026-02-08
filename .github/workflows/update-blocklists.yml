@@ -31,7 +31,10 @@ jobs:
           git config --global user.email "${{ github.actor }}"
 
           New-Item -Path "threats/dns/temp" -ItemType "Directory"
+
+          Get-Location
           Set-Location "threats/dns/temp"
+          Get-Location
           
           $Files = @("spam-tlds-onlydomains.txt", "spam-tlds-allow-onlydomains.txt", "nrd-last-20-days.txt")
           
