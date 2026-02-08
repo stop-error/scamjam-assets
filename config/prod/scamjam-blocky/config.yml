@@ -1,0 +1,55 @@
+queryLog:
+  type: console
+upstreams:
+  strategy: strict
+  timeout: 5s
+  groups:
+    default:
+      - https://dns.quad9.net/dns-query
+      - https://security.cloudflare-dns.com/dns-query
+bootstrapDns:
+  - upstream: https://dns.quad9.net/dns-query
+    ips:
+      - 9.9.9.9
+      - 149.112.112.112
+      - 2620:fe::9
+      - 2620:fe::fe
+  - upstream: https://security.cloudflare-dns.com/dns-query
+    ips:
+      - 1.1.1.2
+      - 1.0.0.2
+      - 2606:4700:4700::1112
+      - 2606:4700:4700::1002
+blocking:
+  loading:
+    maxErrorsPerSource: -1
+    strategy: fast
+    downloads:
+      timeout: 4m
+  blockType: nxDomain
+  denylists:
+    hagezi-dyndns:
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
+    hagezi-nrd:
+      - https://cebeerre.github.io/dnsblocklists/NRD/nrd7_asterisk.txt
+      - https://cebeerre.github.io/dnsblocklists/NRD/nrd14-8_asterisk.txt
+    scamjam-remoteaccess:
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/scamjam-remoteaccess.txt
+    hagezi-threat:
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.txt
+    hagezi-popup:
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/popupads.txt
+    hagezi-tld:
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-onlydomains.txt
+  allowlists:
+    scamjam-tld:
+      - https://cdn.jsdelivr.net/gh/stop-error/scamjam-assets@latest/threats/dns/spam-tlds-allow-onlydomains.txt
+  clientGroupsBlock:
+    default:
+      - scamjam-dyndns
+      - scamjam-nrd
+      - scamjam-remoteaccess
+      - scamjam-threat
+      - scamjam-tld
+ports:
+  dns: 127.0.0.3:53
