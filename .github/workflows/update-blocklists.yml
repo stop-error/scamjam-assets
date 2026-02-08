@@ -83,7 +83,8 @@ jobs:
           }
           
           Set-Location "../"
-          
+          Get-Location
+          Get-ChildItem
           git status
           git add *
           git status
