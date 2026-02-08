@@ -73,9 +73,7 @@ jobs:
           }
           
           $Dir = Get-ChildItem
-          $Dir
           foreach ($File in $Dir) {
-          
               try {
                   Write-Output "Copying $File.Name" 
                   Copy-Item $File.Name "../" -Force
@@ -85,8 +83,9 @@ jobs:
           }
           
           Set-Location "../"
-          Get-Location
-          Get-ChildItem
+
+          # Only commit files that exist
+          
           git status
           git add *
           git status
