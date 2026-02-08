@@ -13,6 +13,7 @@ on:
       - "threats/dns/**"
   workflow_dispatch:
 
+
     
 jobs:
   update-blocklists:
@@ -20,9 +21,11 @@ jobs:
     permissions: 
       contents: write
     steps:
-      - name: Update Blocklists
+      - name: Checkout Repo
         uses: actions/checkout@v4
-      - run: |
+      - name: Update Blocklists
+        shell: pwsh
+        run: |
 
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}"
@@ -83,5 +86,3 @@ jobs:
           
           git commit -m "update blocklists hosted in repo"
           git push
-                    
-        shell: pwsh
