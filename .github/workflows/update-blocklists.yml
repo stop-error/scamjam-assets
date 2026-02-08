@@ -68,13 +68,13 @@ jobs:
                   }
               }
 
-              try {
+             # try {
                   Write-Output "Copying $File" 
                   Copy-Item $File "../" -Force
                   git add "../$File"
-              } catch {
-                  Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
-              }
+              #} catch {
+                 # Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
+              #}
             
           }
           
