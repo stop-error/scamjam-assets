@@ -73,7 +73,7 @@ jobs:
           }
           
           $Dir = Get-ChildItem
-          foreach ($File in $Dir) {
+          foreach ($File.Name in $Dir) {
           
               try {
                   Copy-Item $File "../$File" -Force
