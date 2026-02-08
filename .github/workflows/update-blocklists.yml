@@ -32,9 +32,7 @@ jobs:
 
           New-Item -Path "threats/dns/temp" -ItemType "Directory"
 
-          Get-Location
           Set-Location "threats/dns/temp"
-          Get-Location
           
           $Files = @("spam-tlds-onlydomains.txt", "spam-tlds-allow-onlydomains.txt", "nrd-last-20-days.txt")
           
@@ -77,13 +75,13 @@ jobs:
           foreach ($File in $Dir) {
           
               try {
-                  Copy-Item $File "../threats" -Force
+                  Copy-Item $File "../$File" -Force
               } catch {
                   Write-Error "Failed to copy $File to git repo! Canceling since repo might not be intact." -ErrorAction Stop
               }
           }
           
-          Set-Location "../threats"
+          Set-Location "../"
           
           git add "nrd-last-20-days.txt" "spam-tlds-onlydomains.txt" "spam-tlds-allow-onlydomains.txt"
           
