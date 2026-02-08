@@ -86,6 +86,7 @@ jobs:
           
           git status
           git add *
+          git status
           
         #   git commit -m "update blocklists hosted in repo"
         #   git push
