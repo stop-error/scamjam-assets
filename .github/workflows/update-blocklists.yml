@@ -44,13 +44,13 @@ jobs:
           
               [string]$Url
               switch ($File) {
-                  { $File -eq "nrd-last-20-days.txt" } { $Url = "https://dl.cenk.app/nrd/nrd-last-20-days.txt" }
+                  { $File -eq "nrd-last-20-days.txt" } { $Url = "https://dl.cenk.app/nrd/nrd-last-20-days.txt"; echo "We made it to nrd switch case!" }
                   default { $Url = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/$File" }
               }
               echo $Url
           
               try {
-                  Invoke-WebRequest $Url -OutFile $File
+                  Invoke-WebRequest $Url -OutFile $File | Out-Null
               } catch {
                   Write-Error "Failed to download file $File! Will try to continue batch job." -ErrorAction SilentlyContinue
               }
